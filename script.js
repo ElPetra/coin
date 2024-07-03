@@ -12,7 +12,7 @@ let index = 0;
 let counterImg = 0;
 
 let sound = new Howl({
-  src: ["coin.mp3"],
+  src: ["./coin.mp3"],
   loop: true,
   volume: 0.5,
 });
@@ -36,7 +36,9 @@ function game() {
       sound.stop();
       counterThrow ++;
       console.log(coinNode.src);
-      if (coinNode.src == "http://127.0.0.1:5501/images/orel.png") {
+      if (
+        coinNode.src.includes("orel.png")
+      ) {
         counterOrel++;
         orelNode.textContent = counterOrel;
         console.log(counterOrel);
